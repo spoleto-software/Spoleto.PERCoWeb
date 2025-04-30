@@ -14,9 +14,13 @@ https://github.com/spoleto-software/Spoleto.PERCoWeb
 ## Key Features
 
 •   Easy-to-use API client.
+
 •   Asynchronous operations.
+
 •   Serialization/deserialization of PERCo-Web API data models.
+
 •   Authentication handling.
+
 •   Detailed documentation and code examples.
 
 ## Installation
@@ -49,11 +53,12 @@ var percoWebOptions = new PercoWebOptions
     ServiceUrl = apiEndpoint,
     Login = apiEndpoint,
     Password = password
-}
-;
+};
+
 var provider = new PercoWebProviderFactory().WithOptions(percoWebOptions).Build();
 
 var request = new AccessReportEventRequest(DateTime.Parse("2025-04-28"), DateTime.Parse("2025-04-30"));
+// Add more filter information:
 request.Rows = 1000;
 request.Filters = new(LogicalOperator.Or);
 request.Filters.Rows.Add(new FilterRow(FilterColumn.Fio, "Иванов"));
