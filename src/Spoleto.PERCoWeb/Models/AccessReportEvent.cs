@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using Spoleto.PERCoWeb.Converters;
 
 namespace Spoleto.PERCoWeb
 {
@@ -17,7 +18,8 @@ namespace Spoleto.PERCoWeb
         public string Fio { get; set; }
 
         [JsonPropertyName("time_label")]
-        public string TimeLabel { get; set; }
+        [JsonConverter(typeof(JsonDateTimeConverter))]
+        public DateTime TimeLabel { get; set; }
 
         [JsonPropertyName("identifier")]
         public string Identifier { get; set; }
