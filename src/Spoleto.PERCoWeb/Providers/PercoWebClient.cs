@@ -28,12 +28,13 @@ namespace Spoleto.PERCoWeb
 #if NET
             policyHandler.InnerHandler = new SocketsHttpHandler
             {
-#if DEBUG
+//#if DEBUG
                 SslOptions = new()
                 {
+                    // Allow all certificates
                     RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true
                 }
-#endif
+//#endif
             };
 #else
             policyHandler.InnerHandler = new HttpClientHandler
