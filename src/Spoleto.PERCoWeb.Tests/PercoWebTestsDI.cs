@@ -11,8 +11,8 @@ namespace Spoleto.PERCoWeb.Tests
         {
             var services = new ServiceCollection();
 
-            var taxcomOptions = ConfigurationHelper.GetPercoWebOptions();
-            services.AddSingleton(taxcomOptions);
+            var percoWebOptions = ConfigurationHelper.GetPercoWebOptions();
+            services.AddSingleton(percoWebOptions);
             services.AddSingleton<IPercoWebProvider, PercoWebProvider>();
             _serviceProvider = services.BuildServiceProvider();
         }
